@@ -18,8 +18,9 @@
     <h3> Digital Clock</h3>
     <div>
         <button id="clock" onclick="showTime()">Show Time</button>
-        <button id="clock" onclick="railway()">Railway Time</button>
-        <button id="clock" onclick="normal()">Normal Time</button>
+        <!-- <button type="radio" onclick="railway()">Railway Time</button>
+        <button id="clock" onclick="showTime()">showTime Time</button> -->
+        <!-- <input type="radio"><button></button> -->
         
     </div>
     
@@ -43,8 +44,17 @@
             min = round(min);
             sec = round(sec);
 
-            document.getElementById("clock").innerHTML = hour + ":" + min + ":" + sec;
+            document.getElementById("clock").innerHTML = hour + " : " + min + " : " + sec;
             setTimeout(showTime, 1000);
+
+            
+        }
+
+        function railway() {
+            const date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
 
             
         }
