@@ -17,10 +17,15 @@
 <body>
     <h3> Digital Clock</h3>
     <div>
-        <button id="clock" onclick="showTime()">Show Time</button>
+        <div id="clock"></div>
+        <div id="clock1"></div>
+        <!-- <button id="clock" onclick="showTime()">Show Time</button> -->
+        <br>
         <!-- <button type="radio" onclick="railway()">Railway Time</button>
         <button id="clock" onclick="showTime()">showTime Time</button> -->
-        <!-- <input type="radio"><button></button> -->
+        <input type="radio" onclick="showTime()">Railway Time
+        <br>
+        <input type="radio" onclick="normalTime()">Normal Time
         
     </div>
     
@@ -50,13 +55,28 @@
             
         }
 
-        function railway() {
+        function normalTime() {
             const date = new Date();
             let hour = date.getHours();
             let min = date.getMinutes();
             let sec = date.getSeconds();
+            let session = "AM"
 
-            
+            if(hour == 0){
+                hour==12;
+            }
+
+            if(hour > 12){
+                hour = hour - 12;
+                session = "PM"
+            }
+
+            min = round(min);
+            sec = round(sec);
+
+            document.getElementById("clock").innerHTML = hour + " : " + min + " : " + sec +"  " + session;
+            setTimeout(normalTime, 1000);
+
         }
 
     </script>
