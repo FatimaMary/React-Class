@@ -27,11 +27,22 @@
             let hour = date.getHours();
             let min = date.getMinutes();
             let sec = date.getSeconds();
+            
+            min = round(min);
+            sec = round(sec);
 
             document.getElementById("clock").innerHTML = hour + ":" + min + ":" + sec;
             setTimeout(showTime, 1000);
         }
 
+        function round(i) {
+            if (i < 10) {
+                return ("0" + i)
+            }
+            if (i >= 10) {
+                return (i)
+            }
+        }
         // setTimeout = (function () {
         //      const date = new Date();
         //      let hour = date.getHours();
