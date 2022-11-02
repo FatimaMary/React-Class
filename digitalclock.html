@@ -19,64 +19,15 @@
 <body>
     <h3> Digital Clock</h3>
     <div>
-        <div id="clock"></div>
+        <!-- <button id="clock" onclick="showTime()">Show Time</button> -->
         <br>
-        <input type="radio" onclick="showTime()">Railway Time
+        <input type="radio" name="timer" id="railway">Railway Time
         <br>
-        <input type="radio" onclick="normalTime()">Normal Time
-        
+        <input type="radio"name="timer" id="normal" >Normal Time
+        <br>
+        <button id="clock" onclick="showTime()">Show Time</button>
     </div>
     
-    <script>
-
-        function round(i) {
-            if (i < 10) {
-                return ("0" + i)
-            }
-            if (i >= 10) {
-                return (i)
-            }
-        }
-
-        function showTime() {
-            const date = new Date();
-            let hour = date.getHours();
-            let min = date.getMinutes();
-            let sec = date.getSeconds();
-            
-            min = round(min);
-            sec = round(sec);
-
-            document.getElementById("clock").innerHTML = hour + " : " + min + " : " + sec;
-            setTimeout(showTime, 1000);
-
-            
-        }
-
-        function normalTime() {
-            const date = new Date();
-            let hour = date.getHours();
-            let min = date.getMinutes();
-            let sec = date.getSeconds();
-            let session = "AM"
-
-            if(hour == 0){
-                hour==12;
-            }
-
-            if(hour > 12){
-                hour = hour - 12;
-                session = "PM"
-            }
-
-            min = round(min);
-            sec = round(sec);
-
-            document.getElementById("clock").innerHTML = hour + " : " + min + " : " + sec +"  " + session;
-            setTimeout(normalTime, 1000);
-
-        }
-
-    </script>
+    <script src="clock.js"></script>
 </body>
 </html>
