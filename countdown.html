@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDown Days</title>
+</head>
+<style>
+    html{
+        /* margin: 0 auto; */
+        /* background: lightgreen; */
+        color: blueviolet;
+    }
+    body {
+        margin: 0 auto;
+        height: 200px;
+        width: 500px;
+        border: 2px solid red;
+        /* background: cornflowerblue; */
+    }
+
+    h2 {
+       text-align: center;
+    }
+
+    .clock {
+        margin: 0 auto;
+        height: 100px;
+        width: 400px;
+        /* border: 2px solid blue; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #days, 
+    #hours,
+    #minutes,
+    #seconds {
+        margin: 0 auto;
+        height: 75px;
+        width: 75px;
+        border: 2px solid red;
+        text-align: center;
+        font-size: 25px;
+        /* padding: 10px; */
+        background: lightgreen;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+</style>
+<body>
+    <h2>CountDown Days</h2>
+    <div class="clock">
+        <div id="days"></div>
+        <div id="hours"></div>
+        <div id="minutes"></div>
+        <div id="seconds"></div>
+    </div>
+
+    <script>
+        let CountDownDate = new Date("Nov 11 2022 12: 30: 30");
+        
+        let x = setInterval(function() {
+            let currentDate = new Date().getTime();
+
+            let daysToGo = CountDownDate - currentDate;
+
+            const sec = 1000
+            const minute = 1000 * 60;
+            const hour = minute * 60; //(1000 * 60 * 60)
+            const day = hour * 24; //(1000 * 60 * 60 * 24)
+            
+            let reDays = Math.floor(daysToGo / day);
+            let reHours = Math.floor((daysToGo % day) / hour);
+            let reMinutes = Math.floor ((daysToGo % hour) / minute);
+            let reSeconds = Math.floor ((daysToGo % minute) / sec);
+
+            document.getElementById("days").innerHTML = reDays + " d " ;
+            document.getElementById("hours").innerHTML = reHours + " h ";
+            document.getElementById("minutes").innerHTML = reMinutes + " M ";
+            document.getElementById("seconds").innerHTML = reSeconds + " s ";
+            
+        }, 1000)
+    </script>
+</body>
+</html>
