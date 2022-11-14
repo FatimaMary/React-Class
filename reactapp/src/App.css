@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+  color: blueviolet;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+ul {
+  border: 2px solid red;
+  margin: 0 30vw;
+}
+
+li {
+  text-align: center;
+  list-style: none;
+  padding: 5px;
+}

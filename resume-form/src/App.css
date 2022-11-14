@@ -1,0 +1,19 @@
+.app {
+  /* text-align: center; */
+  border: 2px solid red;
+  background: linear-gradient(whitesmoke, lightpink);
+  box-shadow: 2px;
+  width: 300px;
+  margin: auto;
+}
+
+.app-header {
+  text-align: center;
+  text-transform: uppercase;
+  color: blueviolet;
+}
+
+td {
+  width: 50%;
+  padding: 5px 5px;
+}
