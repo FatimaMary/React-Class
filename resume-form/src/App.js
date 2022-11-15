@@ -1,11 +1,13 @@
 import React ,{ Component } from 'react';
+import Data from './Components/data';
 import './App.css';
+
 
 class App extends React.Component{
   render() {
     return(
       <div className='app'>
-        <h1 className='app-header'>My data</h1>
+        {/* <h1 className='app-header'>My data</h1>
         <table className='app-table'>
           <tr>
             <td>Name:</td>
@@ -23,7 +25,8 @@ class App extends React.Component{
             <td>Major Subject:</td>
             <td>{this.props.branch}</td>
           </tr>
-        </table>
+        </table> */}
+        <Data />
       </div>
     );
   }
