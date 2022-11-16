@@ -1,7 +1,14 @@
 import React, { Component } from "react";
-imp
+import App from "../App";
 
 class Data extends React.Component {
+    constructor(props)
+    {
+        super(props);
+        this.props={
+            name:"prakash",
+        }
+    };
     render(){
         return(
             <div>
@@ -9,24 +16,31 @@ class Data extends React.Component {
                 <table className='app-table'>
                 <tr>
                     <td>Name:</td>
-                    <td>{App.this.props.name}</td>
+                    <td>{props.name}</td>
                 </tr>
                 <tr>
                     <td>Date of Birth:</td>
-                    <td>{App.this.props.dob}</td>
+                    <td>{App.dob}</td>
                 </tr>
                 <tr>
                     <td>Qualification:</td>
-                    <td>{App.this.props.study}</td>
+                    <td>{App.study}</td>
                 </tr>
                 <tr>
                     <td>Major Subject:</td>
-                    <td>{App.this.props.branch}</td>
+                    <td>{App.branch}</td>
                 </tr>
                 </table>
             </div>
         )
     }
 }
+
+// Data.defaultProps = {
+//     name: "A.Fatima Mary",
+//     dob: "09.08.1992",
+//     study: "M.Sc.,M.phil",
+//     branch: "Mathematics"
+//   }
 
 export default Data 

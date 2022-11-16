@@ -5,6 +5,7 @@ import './App.css';
 
 class App extends React.Component{
   render() {
+    const name="prakash";
     return(
       <div className='app'>
         {/* <h1 className='app-header'>My data</h1>
@@ -32,10 +33,5 @@ class App extends React.Component{
   }
 }
 
-App.defaultProps = {
-  name: "A.Fatima Mary",
-  dob: "09.08.1992",
-  study: "M.Sc.,M.phil",
-  branch: "Mathematics"
-}
+
 export default App;
