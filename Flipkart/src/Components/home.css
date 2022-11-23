@@ -1,0 +1,25 @@
+.home-header {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .home-btn1 {
+    height: 50px;
+    width: 150px;
+    /* border: 1px solid red; */
+    background-image: url("Images/flipcart.png");
+    background-position: center;
+    background-size: contain;
+    border-radius: 10px;
+  }
+  .home-btn2 {
+    height: 50px;
+    width: 150px;
+    /* border: 1px solid red; */
+    background-image: url("Images/grocery.png");
+    background-position: center;
+    background-size: cover;
+    border-radius: 15px;
+    background-repeat: no-repeat;
+  }

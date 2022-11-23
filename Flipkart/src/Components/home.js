@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
+import './home.css'
 import Footer from './footer';
 
 
@@ -8,7 +8,10 @@ class Home extends Component{
     render(){
         return(
             <div className='home'>
-                <h1>You Clicked Home Button</h1>
+                <div className='home-header'>
+                    <div className='home-btn1'></div>
+                    <div className='home-btn2'></div>
+                </div>
                 <Footer/>
             </div>
         );

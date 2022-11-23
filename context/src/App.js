@@ -1,35 +1,44 @@
 import React from 'react';
 import './App.css';
+import { MyContext } from './Components/context';
+// import ChangeName from './Components/component1';
+import Name from './Components/name';
 
-const MyContext = React.createContext('');
+
 class App extends React.Component{
+  constructor() {
+    super();
+    this.state = {
+      name: `Fatima`
+    }
+  }
+
+  // sName = () => {
+  //   this.setState({sName: `Mary`})
+  // }
   
   render() {
     return(
       <div>
-        <MyContext.Provider value='Fatima'>
-          <Name/>
+        <MyContext.Provider value={{name:this.state.name }}>
+          <Name name={this.state.name}/>
         </MyContext.Provider>
       </div>
     )
   }
 }
 
-function Name(props) {
-  return(
-    <div>
-      <ChangeName/>
-    </div>
-  )
-}
 
-class ChangeName extends React.Component {
-  static contextType = MyContext;
-  render(){
-    return(
-      <h1>{this.context}</h1>
-      // <button theme={this.context}>change</button>
-    )
-  }
-}
+
+
+
+
+// class ChangeName extends React.Component {
+//   static contextType = MyContext;
+//   render(){
+//     return(
+//       <h1>{this.context}</h1>
+//     )
+//   }
+// }
 export default App;
