@@ -15,8 +15,6 @@ class Application extends Component {
   this.handleSubmit = this.handleSubmit.bind(this);
 }
 
-  
-
     handleChange(event) {
       const target = event.target;
       const value = target.value;
@@ -26,7 +24,7 @@ class Application extends Component {
     }
 
     handleSubmit(event) {
-      document.write(this.state.fullName + " " + "Successfully Submited your form ");
+      // document.write(this.state.fullName + " " + "Successfully Submited your form ");
       event.preventdefault()
     }
   
@@ -34,7 +32,7 @@ class Application extends Component {
   render(){
     return(
       <div>
-        <form onSubmit={this.handleSubmit} >
+        <form onSubmit={this.handleSubmit} method="post">
           <table>
             <th><h2 >Login Form</h2></th>
             <tr>

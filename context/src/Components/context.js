@@ -1,3 +1,7 @@
 import React from "react";
 
-export const MyContext = React.createContext({});
+const UserContext = React.createContext({});
+const Provider = UserContext.Provider;
+const Consumer = UserContext.Consumer;
+
+export { Provider, Consumer }
