@@ -1,27 +1,37 @@
-import React from 'react'
+import React from "react";
 
-export default function Signin() {
-    const [email, setEmail] = useState([]);
-    const [password, setPassword] = useState([]);
-    const [data, setData] = useState([]);
+function LoadBackground() {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [data, setData] = React.useState([]);
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios 
-        .get("http://127.0.0.1:8000/students/")
-        .then(res => this.setData({ data: res.data }))
-        .catch(err => console.log(err));
+  React.useEffect(() => {
+    const url = "https://randomuser.me/api/?results=15";
+    fetch(url)
+      .then((response) => response.json())
+      .then((json) => setData(json['results']))
+      .catch((error) => console.log(error));
+  }, []);
+
+  React.useEffect(() => {
+    if (data.length !== 0) {
+      setIsLoading(false);
     }
+    console.log(data);
+  }, [data]);
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <label>Email:</label>
-            <input placeholder='Email' value={email} onChange={(e)=> setEmail(e.target.value)}></input>
-            <label>Password:</label>
-            <input placeholder='Password' value={password} onChange={(e)=>setPassword(e.target.value)}></input>
-            <button>Submit</button>
-        </form>
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        data.map((user) => (
+          <h1>
+            {user.name.first} {user.name.last}
+          </h1>
+        ))
+      )}
     </div>
-  )
+  );
 }
+
+export default LoadBackground;
