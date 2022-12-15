@@ -75,6 +75,6 @@ td:last-child > button {
 
 .addenquiry-refer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-betweenss;
+  flex-direction: column;
+  justify-content: space-between;
 }

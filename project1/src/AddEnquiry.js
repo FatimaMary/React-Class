@@ -37,6 +37,10 @@ export default function AddEnquiry() {
         console.log(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
+
   return (
     <div className='addenquiry-container'>
         <h2 className='addenquiry-head'>List of Enquiry Details:-</h2>
@@ -63,7 +67,7 @@ export default function AddEnquiry() {
             </tbody>
         </table>
         <h4 className='addenquiry-detail'>Add Enquiry</h4>
-        <form className='addenquiry-form'>
+        <form className='addenquiry-form' onSubmit={handleSubmit}>
             <div>
                 <label>Name: </label>
                 <input type='text' name='name' value={name} onChange={(e)=> setName(e.target.value)}/>
@@ -103,16 +107,20 @@ export default function AddEnquiry() {
                 </select>
             </div>
             <div className='addenquiry-refer'>
-                <label>Reference:</label>
-                <select value={refer} onChange={(e) => setRefer(e.target.value)}>
-                    {option1.map(options => (
-                        <option key={options.value} value={options.value}>
-                            {options.text}
-                        </option>
-                    ))}
-                </select>
-                <label>If Others:</label>
-                <input type='text' name='others'/>
+                <div>
+                    <label>Reference:</label>
+                    <select value={refer} onChange={(e) => setRefer(e.target.value)}>
+                        {option1.map(options => (
+                            <option key={options.value} value={options.value}>
+                                {options.text}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label>If Others:</label>
+                    <input type='text' name='others'/>
+                </div>
             </div>
             <div>
                 <label>Remarks:</label>
